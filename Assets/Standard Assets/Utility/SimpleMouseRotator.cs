@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
+//using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets.Utility
 {
@@ -45,8 +45,8 @@ namespace UnityStandardAssets.Utility
             float inputV;
             if (relative)
             {
-                inputH = CrossPlatformInputManager.GetAxis("Mouse X");
-                inputV = CrossPlatformInputManager.GetAxis("Mouse Y");
+                //inputH = CrossPlatformInputManager.GetAxis("Mouse X");
+                //inputV = CrossPlatformInputManager.GetAxis("Mouse Y");
 
                 // wrap values to avoid springing quickly the wrong way from positive to negative
                 if (m_TargetAngles.y > 180)
@@ -85,8 +85,8 @@ namespace UnityStandardAssets.Utility
 			}
 #else
                 // with mouse input, we have direct control with no springback required.
-                m_TargetAngles.y += inputH*rotationSpeed;
-                m_TargetAngles.x += inputV*rotationSpeed;
+                //m_TargetAngles.y += inputH*rotationSpeed;
+                //m_TargetAngles.x += inputV*rotationSpeed;
 #endif
 
                 // clamp values to allowed range
