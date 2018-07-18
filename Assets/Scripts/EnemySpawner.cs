@@ -6,8 +6,8 @@ public class EnemySpawner : MonoBehaviour {
 
     public GameObject[] Enemies;
 
-    float minSpawnTime = 0.5f;
-    float maxSpawnTime = 2.0f;
+    float minSpawnTime = 0.7f;
+    float maxSpawnTime = 1.0f;
 
 	// Use this for initialization
 	void Start ()
