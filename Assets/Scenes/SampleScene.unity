@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 569665816}
   - component: {fileID: 569665815}
   - component: {fileID: 569665817}
+  - component: {fileID: 569665818}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -436,6 +437,31 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4ec50df22376f4246a1cd881d813031f, type: 3}
   - {fileID: 21300000, guid: fda72d3d18dfceb4fadd2a6b4bc9b5ff, type: 3}
   - {fileID: 21300000, guid: 65ee7ff7d1fd957408caa628d3945867, type: 3}
+--- !u!61 &569665818
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 569665814}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.022416953, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.09, y: 0.16}
+    newSize: {x: 0.09, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.045166098, y: 0.16}
+  m_EdgeRadius: 0
 --- !u!1 &574675368
 GameObject:
   m_ObjectHideFlags: 0
