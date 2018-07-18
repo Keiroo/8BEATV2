@@ -27,7 +27,6 @@ public class EnemySpawner : MonoBehaviour {
         {
             float spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
             yield return new WaitForSeconds(spawnTime);
-            print(spawnTime);
             SpawnEnemy();
         }        
     }
@@ -36,7 +35,5 @@ public class EnemySpawner : MonoBehaviour {
     {
         int enemyID = Random.Range(0, 3);
         Instantiate(Enemies[enemyID], transform);
-        print(transform.position);
-
     }
 }
