@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour {
         if (!isAlive)
             if (!devMode)
             {
+                int highscore = PlayerPrefs.GetInt("highscore");
+                if (points > highscore) PlayerPrefs.SetInt("highscore", points);
                 Time.timeScale = 0f;
                 StartCoroutine(Fade());
             }
@@ -48,7 +50,7 @@ public class GameManager : MonoBehaviour {
 
     public void AddPoints()
     {
-        points += 100;
+        points += 1;
         print(points);
     }
 
@@ -59,8 +61,9 @@ public class GameManager : MonoBehaviour {
         {
             fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, fadeImage.color.a + 0.005f);
             yield return null;
-        }
+        }        
         SceneManager.LoadScene("EndGameScene");
+        Time.timeScale = 1f;
         yield return null;
     }
 }

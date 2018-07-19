@@ -1258,6 +1258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f8d4404eeac174895723589631b949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  devMode: 0
   HPCounter: {fileID: 730610865}
   ScoreCounter: {fileID: 1443469721}
   fadeImage: {fileID: 1751437848}
