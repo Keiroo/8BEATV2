@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
+    public bool devMode;
     public GameObject HPCounter;
     public GameObject ScoreCounter;
     public Image fadeImage;
@@ -26,10 +27,11 @@ public class GameManager : MonoBehaviour {
         ScoreCounter.GetComponent<ScoreCounter>().UpdateScore(points);
 
         if (!isAlive)
-        {
-            Time.timeScale = 0f;
-            StartCoroutine(Fade());
-        }
+            if (!devMode)
+            {
+                Time.timeScale = 0f;
+                StartCoroutine(Fade());
+            }
             //SceneManager.LoadScene("EndGameScene");
 	}
 
