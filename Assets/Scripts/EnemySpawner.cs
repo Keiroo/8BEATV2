@@ -6,8 +6,7 @@ public class EnemySpawner : MonoBehaviour {
 
     public GameObject[] Enemies;
 
-    float minSpawnTime = 0.7f;
-    float maxSpawnTime = 1.0f;
+    float spawnTime = 1.0f;
 
 	// Use this for initialization
 	void Start ()
@@ -25,7 +24,6 @@ public class EnemySpawner : MonoBehaviour {
     {
         while (true)
         {
-            float spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
             yield return new WaitForSeconds(spawnTime);
             SpawnEnemy();
         }        
