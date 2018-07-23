@@ -1034,7 +1034,6 @@ GameObject:
   - component: {fileID: 1443469722}
   - component: {fileID: 1443469725}
   - component: {fileID: 1443469724}
-  - component: {fileID: 1443469723}
   m_Layer: 5
   m_Name: ScoreCounter
   m_TagString: Untagged
@@ -1060,17 +1059,6 @@ RectTransform:
   m_AnchoredPosition: {x: 180, y: 605}
   m_SizeDelta: {x: 360, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1443469723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1443469721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4ed59d79adf334d97fa3302184ddbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1443469724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1263,6 +1251,7 @@ MonoBehaviour:
   devMode: 0
   HPCounter: {fileID: 730610865}
   ScoreCounter: {fileID: 1443469721}
+  MultiplierCounter: {fileID: 1824042492}
   fadeImage: {fileID: 1751437848}
 --- !u!4 &1699890164
 Transform:
@@ -1462,6 +1451,7 @@ GameObject:
   - component: {fileID: 1824042493}
   - component: {fileID: 1824042495}
   - component: {fileID: 1824042494}
+  - component: {fileID: 1824042496}
   m_Layer: 5
   m_Name: Multiplier
   m_TagString: Untagged
@@ -1526,3 +1516,14 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1824042492}
+--- !u!114 &1824042496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1824042492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b25bb9a5dfba7a41b1161896f8e7233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

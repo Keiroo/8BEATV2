@@ -9,10 +9,13 @@ public class GameManager : MonoBehaviour {
     public bool devMode;
     public GameObject HPCounter;
     public GameObject ScoreCounter;
+    public GameObject MultiplierCounter;
     public Image fadeImage;
 
     int healthPoints = 3;
     int points = 0;
+    int multiplier = 1;
+    int combo = 0;
     bool isAlive = true;
 
 	// Use this for initialization
@@ -23,8 +26,9 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        HPCounter.GetComponent<HPCounter>().UpdateHP(healthPoints);
-        ScoreCounter.GetComponent<ScoreCounter>().UpdateScore(points);
+        HPCounter.GetComponent<Text>().text = "HP: " + healthPoints;
+        ScoreCounter.GetComponent<Text>().text = points.ToString();
+        MultiplierCounter.GetComponent<Text>().text = "X" + multiplier;
 
         if (!isAlive)
             if (!devMode)
@@ -44,12 +48,23 @@ public class GameManager : MonoBehaviour {
     public void LoseHealthPoint()
     {
         healthPoints--;
+        combo = 0;
+        multiplier = 1;
         if (healthPoints <= 0) isAlive = false;
     }
 
     public void AddPoints()
     {
-        points += 1;
+        combo += 1;
+
+        if (combo > 10)
+        {
+            combo = 0;
+            multiplier *= 2;
+        }
+
+
+        points += 1 * multiplier;
         print(points);
     }
 
