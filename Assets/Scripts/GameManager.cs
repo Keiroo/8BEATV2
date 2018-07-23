@@ -11,15 +11,22 @@ public class GameManager : MonoBehaviour {
     public GameObject ScoreCounter;
     public GameObject MultiplierCounter;
     public Image fadeImage;
+    public GameObject EnemySpawner;
+    public float SpeedUpEnemyMovement = 1.2f;
+    public float SpeedUpEnemySpawnTime = 0.8f;
+    public int SpeedUpThreshold = 50;
+    public float SpeedUpThresholdCoeff = 2.5f;
+    public int ComboThreshold = 5;
 
-    int healthPoints = 3;
-    int points = 0;
-    int multiplier = 1;
-    int combo = 0;
-    bool isAlive = true;
+    private int healthPoints = 3;
+    private int points = 0;
+    private int multiplier = 1;
+    private int combo = 0;
+    private bool isAlive = true;    
+    private int thresholdCount = 1;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
 	}
 	
@@ -36,7 +43,14 @@ public class GameManager : MonoBehaviour {
                 if (points > highscore) PlayerPrefs.SetInt("highscore", points);
                 Time.timeScale = 0f;
                 StartCoroutine(Fade());
-            }          
+            }     
+        
+        if (points / SpeedUpThreshold >= thresholdCount)
+        {
+            SpeedUpEnemies();
+            thresholdCount++;
+        }
+
 	}
 
     public int GetHealthPoints()
@@ -56,12 +70,11 @@ public class GameManager : MonoBehaviour {
     {
         combo += 1;
 
-        if (combo > 10)
+        if (combo >= ComboThreshold)
         {
             combo = 0;
             multiplier *= 2;
         }
-
 
         points += 1 * multiplier;
     }
@@ -77,5 +90,27 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene("EndGameScene");
         Time.timeScale = 1f;
         yield return null;
+    }
+
+    public void SpeedUpEnemies()
+    {
+        int i = 0;
+        GameObject[] children = new GameObject[EnemySpawner.transform.childCount];
+
+        foreach (Transform child in EnemySpawner.transform)
+        {
+            children[i] = child.gameObject;
+            i++;
+        }
+
+        foreach (GameObject child in children)
+        {
+            Destroy(child);
+        }
+
+        EnemySpawner.GetComponent<EnemySpawner>().SpawnTime *= SpeedUpEnemySpawnTime;
+        EnemySpawner.GetComponent<EnemySpawner>().EnemySpeed *= SpeedUpEnemyMovement;
+
+        SpeedUpThreshold = (int)(SpeedUpThreshold * SpeedUpThresholdCoeff);
     }
 }

@@ -799,6 +799,7 @@ MonoBehaviour:
   - {fileID: 1207739588793920, guid: 855f0e098f9b2824c82bf29fbf9ecd4c, type: 2}
   - {fileID: 1149118561347012, guid: e41ddafd89b45bc42a89c6a3c91f7daf, type: 2}
   - {fileID: 1492880105172848, guid: 94129215553477e4995262a7f4fe8c15, type: 2}
+  SpawnTime: 1
 --- !u!1 &1054705958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,6 +1242,7 @@ MonoBehaviour:
   ScoreCounter: {fileID: 1443469721}
   MultiplierCounter: {fileID: 1824042492}
   fadeImage: {fileID: 1751437848}
+  EnemySpawner: {fileID: 879992540}
 --- !u!4 &1699890164
 Transform:
   m_ObjectHideFlags: 0

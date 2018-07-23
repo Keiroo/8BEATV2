@@ -6,7 +6,8 @@ public class EnemySpawner : MonoBehaviour {
 
     public GameObject[] Enemies;
 
-    float spawnTime = 1.0f;
+    public float SpawnTime = 1f;
+    public float EnemySpeed = 3f;
 
 	// Use this for initialization
 	void Start ()
@@ -24,7 +25,7 @@ public class EnemySpawner : MonoBehaviour {
     {
         while (true)
         {
-            yield return new WaitForSeconds(spawnTime);
+            yield return new WaitForSeconds(SpawnTime);
             SpawnEnemy();
         }        
     }
@@ -32,6 +33,7 @@ public class EnemySpawner : MonoBehaviour {
     public void SpawnEnemy()
     {
         int enemyID = Random.Range(0, 3);
-        Instantiate(Enemies[enemyID], transform);
+        GameObject enemy = Instantiate(Enemies[enemyID], transform);
+        enemy.GetComponent<EnemyMovement>().MoveSpeed = EnemySpeed;
     }
 }
