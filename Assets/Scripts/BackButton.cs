@@ -17,9 +17,7 @@ public class BackButton : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            print("Hello there");
             SceneManager.LoadScene(SceneName);
         }
-
     }
 }

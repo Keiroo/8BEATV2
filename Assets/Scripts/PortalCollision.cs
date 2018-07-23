@@ -22,14 +22,10 @@ public class PortalCollision : MonoBehaviour {
         string name = enemy.name;
         string portalName = GetComponent<SpriteRenderer>().sprite.name;
 
-        print(portalName);
-        print(name);
-
         if ((name == "RedEnemy(Clone)" && portalName == "RedPortal")
             || (name == "BlueEnemy(Clone)" && portalName == "BluePortal")
             || (name == "GreenEnemy(Clone)" && portalName == "GreenPortal"))
         {
-            print("Hello");
             GM.GetComponent<GameManager>().AddPoints();
         }
         else GM.GetComponent<GameManager>().LoseHealthPoint();

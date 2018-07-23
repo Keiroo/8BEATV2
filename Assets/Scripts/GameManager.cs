@@ -20,8 +20,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //Color imageColor = fadeImage.color;
-        //fadeImage.color = new Color(imageColor.r, imageColor.b, imageColor.b, 0f);
+
 	}
 	
 	// Update is called once per frame
@@ -65,7 +64,6 @@ public class GameManager : MonoBehaviour {
 
 
         points += 1 * multiplier;
-        print(points);
     }
 
     IEnumerator Fade()

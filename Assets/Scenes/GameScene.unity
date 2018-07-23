@@ -617,7 +617,6 @@ GameObject:
   - component: {fileID: 730610866}
   - component: {fileID: 730610869}
   - component: {fileID: 730610868}
-  - component: {fileID: 730610867}
   m_Layer: 5
   m_Name: HPCounter
   m_TagString: Untagged
@@ -643,17 +642,6 @@ RectTransform:
   m_AnchoredPosition: {x: -180, y: 605}
   m_SizeDelta: {x: 360, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &730610867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 730610865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b25bb9a5dfba7a41b1161896f8e7233, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &730610868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1451,7 +1439,6 @@ GameObject:
   - component: {fileID: 1824042493}
   - component: {fileID: 1824042495}
   - component: {fileID: 1824042494}
-  - component: {fileID: 1824042496}
   m_Layer: 5
   m_Name: Multiplier
   m_TagString: Untagged
@@ -1516,14 +1503,3 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1824042492}
---- !u!114 &1824042496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1824042492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b25bb9a5dfba7a41b1161896f8e7233, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
