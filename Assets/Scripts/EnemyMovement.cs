@@ -7,13 +7,14 @@ public class EnemyMovement : MonoBehaviour {
     Vector3 moveDirection;
 
     float moveSpeed = 3f;
-    float rotationSpeed = 90f;
+    int rotationSpeed = 90;
     int rotationDir = 0;
 
     // Use this for initialization
     void Start () {
         rotationDir = Random.Range(0, 2);
         moveDirection = new Vector3(0f, -moveSpeed);
+        rotationSpeed = Random.Range(60, 180);
     }
 	
 	// Update is called once per frame
