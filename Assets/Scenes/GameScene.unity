@@ -1240,6 +1240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1699890164}
   - component: {fileID: 1699890163}
+  - component: {fileID: 1699890166}
   - component: {fileID: 1699890165}
   m_Layer: 0
   m_Name: GM
@@ -1371,6 +1372,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1699890166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1699890162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 701a09409ea72394fa00ed4bf012bf0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: MainMenuScene
 --- !u!1 &1751437846
 GameObject:
   m_ObjectHideFlags: 0

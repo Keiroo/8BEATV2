@@ -33,13 +33,7 @@ public class GameManager : MonoBehaviour {
                 if (points > highscore) PlayerPrefs.SetInt("highscore", points);
                 Time.timeScale = 0f;
                 StartCoroutine(Fade());
-            }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            print("Hello there");
-            SceneManager.LoadScene("MainMenuScene");
-        }            
+            }          
 	}
 
     public int GetHealthPoints()
