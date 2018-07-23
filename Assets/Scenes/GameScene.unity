@@ -497,6 +497,7 @@ GameObject:
   - component: {fileID: 574675372}
   - component: {fileID: 574675371}
   - component: {fileID: 574675370}
+  - component: {fileID: 574675373}
   m_Layer: 5
   m_Name: BlueButton
   m_TagString: Untagged
@@ -607,6 +608,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 574675368}
+--- !u!114 &574675373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 574675368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a26a34782d3464492b88eb97a0fad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyCode: 275
 --- !u!1 &730610865
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,6 +813,7 @@ MonoBehaviour:
   - {fileID: 1149118561347012, guid: e41ddafd89b45bc42a89c6a3c91f7daf, type: 2}
   - {fileID: 1492880105172848, guid: 94129215553477e4995262a7f4fe8c15, type: 2}
   SpawnTime: 1
+  EnemySpeed: 3
 --- !u!1 &1054705958
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +917,7 @@ GameObject:
   - component: {fileID: 1199744218}
   - component: {fileID: 1199744217}
   - component: {fileID: 1199744216}
+  - component: {fileID: 1199744219}
   m_Layer: 5
   m_Name: GreenButton
   m_TagString: Untagged
@@ -1013,6 +1028,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1199744214}
+--- !u!114 &1199744219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1199744214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a26a34782d3464492b88eb97a0fad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyCode: 274
 --- !u!1 &1443469721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,6 +1125,7 @@ GameObject:
   - component: {fileID: 1610130642}
   - component: {fileID: 1610130641}
   - component: {fileID: 1610130640}
+  - component: {fileID: 1610130643}
   m_Layer: 5
   m_Name: RedButton
   m_TagString: Untagged
@@ -1208,6 +1236,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1610130638}
+--- !u!114 &1610130643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1610130638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a26a34782d3464492b88eb97a0fad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyCode: 276
 --- !u!1 &1699890162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,6 +1283,12 @@ MonoBehaviour:
   MultiplierCounter: {fileID: 1824042492}
   fadeImage: {fileID: 1751437848}
   EnemySpawner: {fileID: 879992540}
+  SpeedUpEnemyMovement: 1.2
+  SpeedUpEnemySpawnTime: 0.8
+  SpeedUpThreshold: 50
+  SpeedUpThresholdCoeff: 2.5
+  ComboThreshold: 5
+  MaxMultiplier: 16
 --- !u!4 &1699890164
 Transform:
   m_ObjectHideFlags: 0
