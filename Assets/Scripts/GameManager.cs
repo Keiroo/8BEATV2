@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
     public int SpeedUpThreshold = 50;
     public float SpeedUpThresholdCoeff = 2.5f;
     public int ComboThreshold = 5;
+    public int MaxMultiplier = 16;
 
     private int healthPoints = 3;
     private int points = 0;
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour {
         {
             combo = 0;
             multiplier *= 2;
+            if (multiplier > MaxMultiplier) multiplier = MaxMultiplier;
         }
 
         points += 1 * multiplier;
