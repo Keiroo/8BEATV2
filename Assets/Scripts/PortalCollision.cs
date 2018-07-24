@@ -5,6 +5,7 @@ using UnityEngine;
 public class PortalCollision : MonoBehaviour {
 
     public GameObject GM;
+    public GameObject particle;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +28,25 @@ public class PortalCollision : MonoBehaviour {
             || (name == "GreenEnemy(Clone)" && portalName == "GreenPortal"))
         {
             GM.GetComponent<GameManager>().AddPoints();
+
+            ParticleSystemRenderer renderer = particle.GetComponent<ParticleSystemRenderer>();
+
+            Material mat = renderer.material;
+
+            if (portalName == "RedPortal")
+            {
+                mat.color = Color.red;
+            }
+            else if (portalName == "GreenPortal")
+            {
+                mat.color = Color.green;
+            }
+            else
+            {
+                mat.color = Color.blue;
+            }
+
+            particle.GetComponent<ParticleSystem>().Play();
         }
         else GM.GetComponent<GameManager>().LoseHealthPoint();
 
