@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
+    public GameObject FadeImage;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,6 +19,6 @@ public class MainMenu : MonoBehaviour {
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("GameScene");
+        FadeImage.GetComponent<Fade>().enabled = true;
     }
 }

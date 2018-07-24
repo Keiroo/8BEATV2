@@ -1506,7 +1506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: EndGameScene
-  FadeSpeed: 0.005
+  FadeSpeed: 0.02
 --- !u!1 &1824042492
 GameObject:
   m_ObjectHideFlags: 0

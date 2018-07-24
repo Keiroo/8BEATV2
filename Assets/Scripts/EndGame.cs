@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour {
 
+    public GameObject FadeImage;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,11 +19,13 @@ public class EndGame : MonoBehaviour {
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("GameScene");
+        FadeImage.GetComponent<Fade>().enabled = true;
+        FadeImage.GetComponent<Fade>().SceneName = "GameScene";
     }
 
     public void LoadMainMenuScene()
     {
-        SceneManager.LoadScene("MainMenuScene");
+        FadeImage.GetComponent<Fade>().enabled = true;
+        FadeImage.GetComponent<Fade>().SceneName = "MainMenuScene";
     }
 }
