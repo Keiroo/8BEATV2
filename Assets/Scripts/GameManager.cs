@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     public GameObject fadeImage;
     public GameObject EnemySpawner;
     public GameObject Camera;
+    public GameObject[] Hearts;
     public float SpeedUpEnemyMovement = 1.2f;
     public float SpeedUpEnemySpawnTime = 0.8f;
     public int SpeedUpThreshold = 50;
@@ -64,6 +65,10 @@ public class GameManager : MonoBehaviour {
         combo = 0;
         multiplier = 1;
         Camera.GetComponent<CameraShake>().enabled = true;
+
+        // Hearts code
+        Hearts[healthPoints].GetComponent<HeartVanish>().enabled = true;
+
         if (healthPoints <= 0) isAlive = false;
     }
 
