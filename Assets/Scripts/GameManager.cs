@@ -85,6 +85,9 @@ public class GameManager : MonoBehaviour {
 
     public void SpeedUpEnemies()
     {
+        // Camera colors
+        Camera.GetComponent<CameraColorChange>().enabled = true;
+
         int i = 0;
         GameObject[] children = new GameObject[EnemySpawner.transform.childCount];
 
