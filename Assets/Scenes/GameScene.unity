@@ -1296,7 +1296,7 @@ MonoBehaviour:
   HPCounter: {fileID: 730610865}
   ScoreCounter: {fileID: 1443469721}
   MultiplierCounter: {fileID: 1824042492}
-  fadeImage: {fileID: 1751437848}
+  fadeImage: {fileID: 1751437846}
   EnemySpawner: {fileID: 879992540}
   Camera: {fileID: 519420028}
   SpeedUpEnemyMovement: 1.2
@@ -1435,6 +1435,7 @@ GameObject:
   - component: {fileID: 1751437847}
   - component: {fileID: 1751437849}
   - component: {fileID: 1751437848}
+  - component: {fileID: 1751437850}
   m_Layer: 5
   m_Name: FadeImage
   m_TagString: Untagged
@@ -1493,6 +1494,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1751437846}
+--- !u!114 &1751437850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1751437846}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26db247d98fea354aa785c7568f9e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: EndGameScene
+  FadeSpeed: 0.005
 --- !u!1 &1824042492
 GameObject:
   m_ObjectHideFlags: 0

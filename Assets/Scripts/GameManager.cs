@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
     public GameObject HPCounter;
     public GameObject ScoreCounter;
     public GameObject MultiplierCounter;
-    public Image fadeImage;
+    public GameObject fadeImage;
     public GameObject EnemySpawner;
     public GameObject Camera;
     public float SpeedUpEnemyMovement = 1.2f;
@@ -43,8 +43,7 @@ public class GameManager : MonoBehaviour {
             {
                 int highscore = PlayerPrefs.GetInt("highscore");
                 if (points > highscore) PlayerPrefs.SetInt("highscore", points);
-                Time.timeScale = 0f;
-                StartCoroutine(Fade());
+                fadeImage.GetComponent<Fade>().enabled = true;                
             }     
         
         if (points / SpeedUpThreshold >= thresholdCount)
@@ -82,18 +81,7 @@ public class GameManager : MonoBehaviour {
         points += 1 * multiplier;
     }
 
-    IEnumerator Fade()
-    {
-
-        while (fadeImage.color.a < 1f)
-        {
-            fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, fadeImage.color.a + 0.005f);
-            yield return null;
-        }        
-        SceneManager.LoadScene("EndGameScene");
-        Time.timeScale = 1f;
-        yield return null;
-    }
+    
 
     public void SpeedUpEnemies()
     {
