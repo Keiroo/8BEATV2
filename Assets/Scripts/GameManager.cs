@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour {
             combo = 0;
             multiplier *= 2;
             if (multiplier > MaxMultiplier) multiplier = MaxMultiplier;
+            else MultiplierCounter.GetComponent<MultiplierAnimation>().enabled = true;
         }
 
         points += 1 * multiplier;
