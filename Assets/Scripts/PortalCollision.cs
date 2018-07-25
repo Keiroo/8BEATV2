@@ -23,14 +23,16 @@ public class PortalCollision : MonoBehaviour {
         string name = enemy.name;
         string portalName = GetComponent<SpriteRenderer>().sprite.name;
 
+        
+
         if ((name == "RedEnemy(Clone)" && portalName == "RedPortal")
             || (name == "BlueEnemy(Clone)" && portalName == "BluePortal")
             || (name == "GreenEnemy(Clone)" && portalName == "GreenPortal"))
         {
             GM.GetComponent<GameManager>().AddPoints();
 
+            gameObject.GetComponent<PortalAnimation>().enabled = true;
             ParticleSystemRenderer renderer = particle.GetComponent<ParticleSystemRenderer>();
-
             Material mat = renderer.material;
 
             if (portalName == "RedPortal")

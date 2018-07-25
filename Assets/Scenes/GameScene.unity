@@ -796,7 +796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Duration: 0.2
-  Amount: 0.1
+  Amount: 0.3
   Decrease: 1
 --- !u!20 &519420031
 Camera:
@@ -877,6 +877,7 @@ GameObject:
   - component: {fileID: 569665817}
   - component: {fileID: 569665818}
   - component: {fileID: 569665819}
+  - component: {fileID: 569665820}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -998,6 +999,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GM: {fileID: 1699890162}
   particle: {fileID: 624589716}
+--- !u!114 &569665820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 569665814}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a8cf89fcefa3441a330fdb0fb7c2d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PositionCoeff: 1.1
+  Speed: 5
 --- !u!1 &574675368
 GameObject:
   m_ObjectHideFlags: 0
