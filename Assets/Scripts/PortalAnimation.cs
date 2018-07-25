@@ -45,6 +45,7 @@ public class PortalAnimation : MonoBehaviour {
             }
             else
             {
+                transform.localPosition = orgPosition;
                 enabled = false;
             }
         }
