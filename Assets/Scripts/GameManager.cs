@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour {
     private bool isAlive = true;    
     private int thresholdCount = 1;
 
+    //timer for audio debugging
+    private float audioTimer = 0;
+
     // Use this for initialization
     void Start () {
 
@@ -35,6 +38,8 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        audioTimer += Time.deltaTime;
+
         HPCounter.GetComponent<Text>().text = "HP: " + healthPoints;
         ScoreCounter.GetComponent<Text>().text = points.ToString();
         MultiplierCounter.GetComponent<Text>().text = "X" + multiplier;
@@ -49,6 +54,7 @@ public class GameManager : MonoBehaviour {
         
         if (points / SpeedUpThreshold >= thresholdCount)
         {
+            audioTimer = 0;
             SpeedUpEnemies();
             thresholdCount++;
         }
@@ -57,6 +63,11 @@ public class GameManager : MonoBehaviour {
     public int GetHealthPoints()
     {
         return healthPoints;
+    }
+
+    public bool GetDevMode()
+    {
+        return devMode;
     }
 
     public void LoseHealthPoint()
@@ -112,5 +123,11 @@ public class GameManager : MonoBehaviour {
         EnemySpawner.GetComponent<EnemySpawner>().EnemySpeed *= SpeedUpEnemyMovement;
 
         SpeedUpThreshold = (int)(SpeedUpThreshold * SpeedUpThresholdCoeff);
+    }
+
+    // for audio debugging
+    public void PrintAudioTimer()
+    {
+        Debug.Log(audioTimer);
     }
 }

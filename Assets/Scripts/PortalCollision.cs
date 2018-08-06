@@ -19,6 +19,9 @@ public class PortalCollision : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // for audio debugging
+        GM.GetComponent<GameManager>().PrintAudioTimer();
+
         GameObject enemy = collision.gameObject;
         string name = enemy.name;
         string portalName = GetComponent<SpriteRenderer>().sprite.name;
@@ -27,7 +30,8 @@ public class PortalCollision : MonoBehaviour {
 
         if ((name == "RedEnemy(Clone)" && portalName == "RedPortal")
             || (name == "BlueEnemy(Clone)" && portalName == "BluePortal")
-            || (name == "GreenEnemy(Clone)" && portalName == "GreenPortal"))
+            || (name == "GreenEnemy(Clone)" && portalName == "GreenPortal")
+            || GM.GetComponent<GameManager>().GetDevMode())
         {
             GM.GetComponent<GameManager>().AddPoints();
 

@@ -6340,7 +6340,7 @@ RectTransform:
   m_GameObject: {fileID: 1050312319}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.000005, y: 1.000005, z: 1.000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 349432796}
   m_RootOrder: 12
@@ -6846,7 +6846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f8d4404eeac174895723589631b949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  devMode: 0
+  devMode: 1
   HPCounter: {fileID: 730610865}
   ScoreCounter: {fileID: 1443469721}
   MultiplierCounter: {fileID: 1824042492}
@@ -7179,7 +7179,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4e1012e6145230f40911d17527467f2b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 29d89a8c56c312440b7b998a52c4c461, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
