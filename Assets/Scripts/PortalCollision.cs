@@ -22,6 +22,13 @@ public class PortalCollision : MonoBehaviour {
         // for audio debugging
         GM.GetComponent<GameManager>().PrintAudioTimer();
 
+        if (GM.GetComponent<GameManager>().newLvl == true)
+        {
+            GM.GetComponent<GameManager>().newLvl = false;
+            GM.GetComponent<GameManager>().PlayBGM();
+        }
+        
+
         GameObject enemy = collision.gameObject;
         string name = enemy.name;
         string portalName = GetComponent<SpriteRenderer>().sprite.name;

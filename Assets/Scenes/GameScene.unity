@@ -6857,12 +6857,15 @@ MonoBehaviour:
   - {fileID: 156018946}
   - {fileID: 58053231}
   - {fileID: 880816283}
+  BGM: {fileID: 1835820784}
   SpeedUpEnemyMovement: 1.2
   SpeedUpEnemySpawnTime: 0.8
   SpeedUpThreshold: 50
   SpeedUpThresholdCoeff: 2
   ComboThreshold: 5
   MaxMultiplier: 16
+  MaxLevel: 5
+  newLvl: 1
 --- !u!4 &1699890164
 Transform:
   m_ObjectHideFlags: 0
@@ -7163,6 +7166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835820786}
   - component: {fileID: 1835820785}
+  - component: {fileID: 1835820787}
   m_Layer: 0
   m_Name: BGM
   m_TagString: Untagged
@@ -7180,7 +7184,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 29d89a8c56c312440b7b998a52c4c461, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -7278,6 +7282,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1835820787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1835820784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3f3545a4e1cc043b9b0d7476d41097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClips:
+  - {fileID: 8300000, guid: 474e5dc6c9c286349b8ec62327d71b83, type: 3}
+  - {fileID: 8300000, guid: 5cecd68b435239349b03864d0a99681d, type: 3}
+  - {fileID: 8300000, guid: 3d00d76fee0a8104cbdb718ca910c94a, type: 3}
+  - {fileID: 8300000, guid: c0aac83bd639a124c87cdc9786b71978, type: 3}
+  - {fileID: 8300000, guid: d552ee6262f94da4f90a9b564952fc62, type: 3}
+  - {fileID: 8300000, guid: 76b4cdc475eed79429d16c7100105cdc, type: 3}
 --- !u!1 &2129931568
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour {
     public GameObject EnemySpawner;
     public GameObject Camera;
     public GameObject[] Hearts;
+    public GameObject BGM;
     public float SpeedUpEnemyMovement = 1.2f;
     public float SpeedUpEnemySpawnTime = 0.8f;
     public int SpeedUpThreshold = 50;
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour {
     public int ComboThreshold = 5;
     public int MaxMultiplier = 16;
     public int MaxLevel = 5;
+    public bool newLvl = true;
 
     private int healthPoints = 3;
     private int points = 0;
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour {
     private bool isAlive = true;    
     private int thresholdCount = 1;
     private int level = 1;
+    
 
     //timer for audio debugging
     private float audioTimer = 0;
@@ -77,6 +81,11 @@ public class GameManager : MonoBehaviour {
         return devMode;
     }
 
+    public void PlayBGM()
+    {
+        BGM.GetComponent<BGM>().PlayBGM(level);
+    }
+
     public void LoseHealthPoint()
     {
         healthPoints--;
@@ -109,6 +118,9 @@ public class GameManager : MonoBehaviour {
 
     public void SpeedUpEnemies()
     {
+        BGM.GetComponent<BGM>().StopBGM();
+        newLvl = true;
+
         // Camera colors
         Camera.GetComponent<CameraColorChange>().enabled = true;
 
