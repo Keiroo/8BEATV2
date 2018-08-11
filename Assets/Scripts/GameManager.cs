@@ -36,11 +36,12 @@ public class GameManager : MonoBehaviour {
 
     //timer for audio debugging
     private float audioTimer = 0;
+    DebugFileWriter dfw;
 
     // Use this for initialization
     void Start () {
-
-	}
+        dfw = GetComponent<DebugFileWriter>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -70,6 +71,11 @@ public class GameManager : MonoBehaviour {
             
         }
 	}
+
+    public int GetLevel()
+    {
+        return level;
+    }
 
     public int GetHealthPoints()
     {
@@ -147,6 +153,8 @@ public class GameManager : MonoBehaviour {
     // for audio debugging
     public void PrintAudioTimer()
     {
+        if (newLvl) dfw.WriteLevel(level);
+        dfw.WriteTimer(audioTimer);
         Debug.Log(audioTimer);
     }
 }
