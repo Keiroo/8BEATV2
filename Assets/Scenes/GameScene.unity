@@ -7133,6 +7133,130 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyCode: 276
+--- !u!1 &1633858158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1633858160}
+  - component: {fileID: 1633858159}
+  m_Layer: 0
+  m_Name: HeartAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1633858159
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1633858158}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1633858160
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1633858158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1835820786}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1699890162
 GameObject:
   m_ObjectHideFlags: 0
@@ -7608,6 +7732,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 738432295}
+  - {fileID: 1633858160}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7626,9 +7751,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 474e5dc6c9c286349b8ec62327d71b83, type: 3}
   - {fileID: 8300000, guid: 5cecd68b435239349b03864d0a99681d, type: 3}
   - {fileID: 8300000, guid: 3d00d76fee0a8104cbdb718ca910c94a, type: 3}
+  - {fileID: 8300000, guid: afaa9afce1744724a9430c4c0fd1173c, type: 3}
   - {fileID: 8300000, guid: c0aac83bd639a124c87cdc9786b71978, type: 3}
   - {fileID: 8300000, guid: d552ee6262f94da4f90a9b564952fc62, type: 3}
   - {fileID: 8300000, guid: 76b4cdc475eed79429d16c7100105cdc, type: 3}
+  - {fileID: 8300000, guid: 06a1efd5ed2e5474190fd35eb1bb05f4, type: 3}
+  - {fileID: 8300000, guid: a47561cd2e1e8774b92c3ff5bc2e8827, type: 3}
   Transitions:
   - {fileID: 8300000, guid: b166a5950c68de54788e5841d4052605, type: 3}
   - {fileID: 8300000, guid: 5ccd4eec99b049a46b441f5f80e2ce34, type: 3}
@@ -7637,7 +7765,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f4cb82ac22a02f848979bee33e61e3f5, type: 3}
   - {fileID: 8300000, guid: a40ef9d958b45c246997545347d38c91, type: 3}
   - {fileID: 8300000, guid: c72d2c97a87d01949bcba4f821159e8f, type: 3}
+  HeartsClips:
+  - {fileID: 8300000, guid: c64d08ec7a7c1734da071e82a7353118, type: 3}
+  - {fileID: 8300000, guid: c301cbc0363f1a94eb88e8596e0f4228, type: 3}
+  - {fileID: 8300000, guid: b50f59008282f2d43b1bb7c429586870, type: 3}
   transAudioSource: {fileID: 738432294}
+  heartSource: {fileID: 1633858159}
 --- !u!1 &1853254405
 GameObject:
   m_ObjectHideFlags: 0

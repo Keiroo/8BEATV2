@@ -7,7 +7,9 @@ public class BGM : MonoBehaviour {
 
     public AudioClip[] AudioClips;
     public AudioClip[] Transitions;
+    public AudioClip[] HeartsClips;
     public AudioSource transAudioSource;
+    public AudioSource heartSource;
 
     public void PlayBGM(int lvl)
     {
@@ -59,6 +61,19 @@ public class BGM : MonoBehaviour {
         {
             AudioSource src = transAudioSource;
             src.clip = clips[ranIndex];
+            src.loop = false;
+            src.Play();
+        }
+    }
+
+    public void PlayHeartEffect()
+    {
+        int ranIndex = Random.Range(0, HeartsClips.Length);
+
+        if (HeartsClips.Length > 0)
+        {
+            AudioSource src = heartSource;
+            src.clip = HeartsClips[ranIndex];
             src.loop = false;
             src.Play();
         }

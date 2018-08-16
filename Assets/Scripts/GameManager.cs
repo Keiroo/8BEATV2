@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour {
 
         // Hearts code
         Hearts[healthPoints].GetComponent<HeartVanish>().enabled = true;
+        BGM.GetComponent<BGM>().PlayHeartEffect();
 
         if (healthPoints <= 0) isAlive = false;
     }
