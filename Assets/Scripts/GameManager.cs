@@ -32,9 +32,11 @@ public class GameManager : MonoBehaviour {
     private bool isAlive = true;    
     private int thresholdCount = 1;
     private int level = 1;
+    private float firstLvlTimer = 0f;
+    private bool firstLvlBGMPlayed = false;
     
 
-    //timer for audio debugging
+    // for audio debugging
     private float audioTimer = 0;
     DebugFileWriter dfw;
 
@@ -45,7 +47,21 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        // for audio debugging
         audioTimer += Time.deltaTime;
+
+        // 1st level starts playing earlier than others
+        if (level == 1 && !firstLvlBGMPlayed)
+        {
+            firstLvlTimer += Time.deltaTime;
+            if (firstLvlTimer > 0.5f)
+            {
+                PlayBGM();
+                firstLvlBGMPlayed = true;
+            }
+
+        }
 
         HPCounter.GetComponent<Text>().text = "HP: " + healthPoints;
         ScoreCounter.GetComponent<Text>().text = points.ToString();

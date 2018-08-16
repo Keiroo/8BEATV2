@@ -20,14 +20,17 @@ public class PortalCollision : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // for audio debugging
-        GM.GetComponent<GameManager>().PrintAudioTimer();
+        //GM.GetComponent<GameManager>().PrintAudioTimer();
 
-        if (GM.GetComponent<GameManager>().newLvl == true)
+        // 1st level BGM starts playing earlier, in GM.Update()
+        if (GM.GetComponent<GameManager>().GetLevel() > 1)
         {
-            GM.GetComponent<GameManager>().newLvl = false;
-            GM.GetComponent<GameManager>().PlayBGM();
+            if (GM.GetComponent<GameManager>().newLvl == true)
+            {
+                GM.GetComponent<GameManager>().newLvl = false;
+                GM.GetComponent<GameManager>().PlayBGM();
+            }
         }
-        
 
         GameObject enemy = collision.gameObject;
         string name = enemy.name;
