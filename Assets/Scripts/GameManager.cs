@@ -125,6 +125,7 @@ public class GameManager : MonoBehaviour {
     public void SpeedUpEnemies()
     {
         BGM.GetComponent<BGM>().StopBGM();
+        BGM.GetComponent<BGM>().PlayTransEffect(level - 1);
         newLvl = true;
 
         // Camera colors

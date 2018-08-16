@@ -6,6 +6,8 @@ using UnityEngine;
 public class BGM : MonoBehaviour {
 
     public AudioClip[] AudioClips;
+    public AudioClip[] Transitions;
+    public AudioSource transAudioSource;
 
     public void PlayBGM(int lvl)
     {
@@ -36,5 +38,29 @@ public class BGM : MonoBehaviour {
     public void StopBGM()
     {
         GetComponent<AudioSource>().Stop();
+    }
+
+    public void PlayTransEffect(int lvl)
+    {
+        List<AudioClip> clips = new List<AudioClip>();
+
+        // Get clips
+        foreach (AudioClip clip in Transitions)
+        {
+            if (clip.name.StartsWith("trans0" + lvl))
+            {
+                clips.Add(clip);
+            }
+        }
+
+        int ranIndex = Random.Range(0, clips.Count);
+
+        if (clips.Count > 0)
+        {
+            AudioSource src = transAudioSource;
+            src.clip = clips[ranIndex];
+            src.loop = false;
+            src.Play();
+        }
     }
 }
