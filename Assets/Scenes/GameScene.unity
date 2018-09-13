@@ -7301,9 +7301,9 @@ MonoBehaviour:
   BGM: {fileID: 1835820784}
   SpeedUpEnemyMovement: 1.2
   SpeedUpEnemySpawnTime: 0.8
-  SpeedUpThreshold: 50
-  SpeedUpThresholdCoeff: 2
-  ComboThreshold: 5
+  SpeedUpThreshold: 80
+  SpeedUpThresholdCoeff: 1.6
+  ComboThreshold: 3
   MaxMultiplier: 16
   MaxLevel: 5
   newLvl: 1
@@ -7750,21 +7750,38 @@ MonoBehaviour:
   AudioClips:
   - {fileID: 8300000, guid: 474e5dc6c9c286349b8ec62327d71b83, type: 3}
   - {fileID: 8300000, guid: 5cecd68b435239349b03864d0a99681d, type: 3}
+  - {fileID: 8300000, guid: 356fd3fd814109247bb5af601924d6c3, type: 3}
+  - {fileID: 8300000, guid: f70420b7b27055948bd6e7f6f784892f, type: 3}
+  - {fileID: 8300000, guid: ab44ef159e2869c42934c4a12871fbe8, type: 3}
   - {fileID: 8300000, guid: 3d00d76fee0a8104cbdb718ca910c94a, type: 3}
   - {fileID: 8300000, guid: afaa9afce1744724a9430c4c0fd1173c, type: 3}
+  - {fileID: 8300000, guid: 6ea58efbf67b14c41ae648924d6079e2, type: 3}
+  - {fileID: 8300000, guid: 9073e6e3ac6db264fa890669b6d753e3, type: 3}
   - {fileID: 8300000, guid: c0aac83bd639a124c87cdc9786b71978, type: 3}
   - {fileID: 8300000, guid: d552ee6262f94da4f90a9b564952fc62, type: 3}
+  - {fileID: 8300000, guid: 2098fcc6204cf5f4fb88841cf6c6e224, type: 3}
+  - {fileID: 8300000, guid: de424a4c90d15f7408fad1ffe758674e, type: 3}
   - {fileID: 8300000, guid: 76b4cdc475eed79429d16c7100105cdc, type: 3}
   - {fileID: 8300000, guid: 06a1efd5ed2e5474190fd35eb1bb05f4, type: 3}
+  - {fileID: 8300000, guid: fcef347cfeb508342ad5af0bc9ef6719, type: 3}
   - {fileID: 8300000, guid: a47561cd2e1e8774b92c3ff5bc2e8827, type: 3}
   Transitions:
   - {fileID: 8300000, guid: b166a5950c68de54788e5841d4052605, type: 3}
   - {fileID: 8300000, guid: 5ccd4eec99b049a46b441f5f80e2ce34, type: 3}
   - {fileID: 8300000, guid: 29e383afd7120e54b9f305f1e9d283b9, type: 3}
+  - {fileID: 8300000, guid: 91dd2d9df7c6d5242a6c9a96e008315d, type: 3}
   - {fileID: 8300000, guid: e9b235c1dd8812848a9c123c73c8fdc8, type: 3}
   - {fileID: 8300000, guid: f4cb82ac22a02f848979bee33e61e3f5, type: 3}
   - {fileID: 8300000, guid: a40ef9d958b45c246997545347d38c91, type: 3}
   - {fileID: 8300000, guid: c72d2c97a87d01949bcba4f821159e8f, type: 3}
+  - {fileID: 8300000, guid: 274a2bd38b193d14e8692d04fccb1d1e, type: 3}
+  - {fileID: 8300000, guid: 67177f0ee1c0b734997f6b69744b87bf, type: 3}
+  - {fileID: 8300000, guid: 206ecbda6ea55854f8ac8a1fef616815, type: 3}
+  - {fileID: 8300000, guid: a88857fab6782994e91db0133c70550e, type: 3}
+  - {fileID: 8300000, guid: 155996b635c9d3743b3bb5f8bc0c5492, type: 3}
+  - {fileID: 8300000, guid: 8754133565694554d88ffada49f90d16, type: 3}
+  - {fileID: 8300000, guid: 0feafe91870f58f4696d2c2032f013cc, type: 3}
+  - {fileID: 8300000, guid: db69bf0bd8471a64ca02c17910566c36, type: 3}
   HeartsClips:
   - {fileID: 8300000, guid: c64d08ec7a7c1734da071e82a7353118, type: 3}
   - {fileID: 8300000, guid: c301cbc0363f1a94eb88e8596e0f4228, type: 3}
