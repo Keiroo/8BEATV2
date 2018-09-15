@@ -70,8 +70,12 @@ public class GameManager : MonoBehaviour {
         if (!isAlive)
             if (!devMode)
             {
+                // Save highscore
                 int highscore = PlayerPrefs.GetInt("highscore");
                 if (points > highscore) PlayerPrefs.SetInt("highscore", points);
+
+                // Save current score
+                PlayerPrefs.SetInt("currentScore", points);
                 fadeImage.GetComponent<Fade>().enabled = true;                
             }     
         
