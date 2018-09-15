@@ -7287,7 +7287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f8d4404eeac174895723589631b949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  devMode: 1
+  devMode: 0
   HPCounter: {fileID: 730610865}
   ScoreCounter: {fileID: 1443469721}
   MultiplierCounter: {fileID: 1824042492}
@@ -7786,6 +7786,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c64d08ec7a7c1734da071e82a7353118, type: 3}
   - {fileID: 8300000, guid: c301cbc0363f1a94eb88e8596e0f4228, type: 3}
   - {fileID: 8300000, guid: b50f59008282f2d43b1bb7c429586870, type: 3}
+  DefeatClips:
+  - {fileID: 8300000, guid: ee52671b86e39124d905a7f6c11f6149, type: 3}
+  - {fileID: 8300000, guid: 619ad70e69d15434da3c7bfbaf64aefa, type: 3}
+  - {fileID: 8300000, guid: 66c3db9aba9f62c4ba67c325191c9023, type: 3}
   transAudioSource: {fileID: 738432294}
   heartSource: {fileID: 1633858159}
 --- !u!1 &1853254405

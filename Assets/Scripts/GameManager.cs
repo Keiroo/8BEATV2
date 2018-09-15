@@ -114,11 +114,9 @@ public class GameManager : MonoBehaviour {
         multiplier = 1;
         Camera.GetComponent<CameraShake>().enabled = true;
 
-        // Hearts code
         Hearts[healthPoints].GetComponent<HeartVanish>().enabled = true;
-        BGM.GetComponent<BGM>().PlayHeartEffect();
-
         if (healthPoints <= 0) isAlive = false;
+        BGM.GetComponent<BGM>().PlayHeartEffect(isAlive);
     }
 
     public void AddPoints()

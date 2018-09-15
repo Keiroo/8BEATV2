@@ -8,6 +8,7 @@ public class BGM : MonoBehaviour {
     public AudioClip[] AudioClips;
     public AudioClip[] Transitions;
     public AudioClip[] HeartsClips;
+    public AudioClip[] DefeatClips;
     public AudioSource transAudioSource;
     public AudioSource heartSource;
 
@@ -66,12 +67,22 @@ public class BGM : MonoBehaviour {
         }
     }
 
-    public void PlayHeartEffect()
+    public void PlayHeartEffect(bool isAlive)
     {
-        int ranIndex = Random.Range(0, HeartsClips.Length);
+        
 
-        if (HeartsClips.Length > 0)
+        if (!isAlive)
         {
+            StopBGM();
+            int ranIndex = Random.Range(0, DefeatClips.Length);
+            AudioSource src = heartSource;
+            src.clip = DefeatClips[ranIndex];
+            src.loop = false;
+            src.Play();
+        }
+        else if (HeartsClips.Length > 0)
+        {
+            int ranIndex = Random.Range(0, HeartsClips.Length);
             AudioSource src = heartSource;
             src.clip = HeartsClips[ranIndex];
             src.loop = false;
