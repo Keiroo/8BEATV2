@@ -1,7 +1,3 @@
-#if !UNITY_WEBGL
-#define MICROPHONE_AVAILABLE
-#endif
-
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -10,7 +6,7 @@ public class SimpleSpectrum : MonoBehaviour {
 
     public enum SourceType
     {
-        AudioSource, AudioListener, MicrophoneInput, StereoMix, Custom
+        AudioSource, AudioListener, StereoMix, Custom
     }
 
     [SerializeField]
@@ -212,7 +208,6 @@ public class SimpleSpectrum : MonoBehaviour {
 
     float logFreqMultiplier, highestLogFreq; //multiplier to ensure that the log-ified frequencies stretch to the highest record in the array.
 
-    string microphoneName;
     float lastMicRestartTime;
     float micRestartWait = 20;
 
@@ -236,8 +231,6 @@ public class SimpleSpectrum : MonoBehaviour {
         {
             Destroy(transform.GetChild(i).gameObject);
         }
-
-        RestartMicrophone();
 
         numSamples = Mathf.ClosestPowerOfTwo(numSamples);
         
@@ -324,60 +317,6 @@ public class SimpleSpectrum : MonoBehaviour {
 
         isEnabled = true;
     }
-
-    /// <summary>
-    /// Restarts the Microphone recording.
-    /// </summary>
-    public void RestartMicrophone()
-    {
-#if MICROPHONE_AVAILABLE
-        Microphone.End(microphoneName);
-
-        //set up microphone input source if required
-        if (sourceType == SourceType.MicrophoneInput || sourceType == SourceType.StereoMix)
-        {
-            audioSource = GetComponent<AudioSource>();
-            if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
-
-            if (Microphone.devices.Length == 0)
-            {
-                Debug.LogError("Error from SimpleSpectrum: Microphone or Stereo Mix is being used, but no Microphones are found!");
-            }
-
-            microphoneName = null; //if type is Microphone, the default microphone will be used. If StereoMix, 'Stereo Mix' will be searched for in the list.
-
-
-            if (sourceType == SourceType.StereoMix) //find stereo mix
-            {
-                foreach (string name in Microphone.devices)
-                    if (name.StartsWith("Stereo Mix")) //since the returned names have driver details in brackets afterwards
-                        microphoneName = name;
-                if(microphoneName==null)
-                    Debug.LogError("Error from SimpleSpectrum: Stereo Mix not found. Reverting to default microphone.");
-            }
-            audioSource.loop = true;
-            audioSource.outputAudioMixerGroup = muteGroup;
-
-            AudioClip clip1 = audioSource.clip = Microphone.Start(microphoneName, true, 5, 44100);
-            audioSource.clip = clip1;
-
-            while (!(Microphone.GetPosition(microphoneName) - 0 > 0)) { }
-            audioSource.Play();
-            lastMicRestartTime = Time.unscaledTime;
-            //print("restarted mic");
-        }
-        else
-        {
-            Destroy(GetComponent<AudioSource>());
-        }
-#else
-        if (sourceType == SourceType.MicrophoneInput || sourceType == SourceType.StereoMix)
-        {
-            Debug.LogError("Error from SimpleSpectrum: Microphone or Stereo Mix cannot be used in WebGL!");
-        }
-#endif
-    }
-
 
     void Update () {
 		if (isEnabled) {
@@ -521,8 +460,6 @@ public class SimpleSpectrum : MonoBehaviour {
                 bar.localScale = Vector3.Lerp(bar.localScale, new Vector3(1, barMinYScale, 1), decayDamp);
 			}
 		}
-        if ((Time.unscaledTime - lastMicRestartTime)>micRestartWait)
-            RestartMicrophone();
 	}
 
     /// <summary>
