@@ -76,15 +76,14 @@ public class GameManager : MonoBehaviour {
             }     
         
         if (points / SpeedUpThreshold >= thresholdCount)
-        {
-            if (level <= MaxLevel)
+        {            
+            if (level < MaxLevel)
             {
                 level++;
                 audioTimer = 0;
                 SpeedUpEnemies();
                 thresholdCount++;
-            }
-            
+            }            
         }
 	}
 
